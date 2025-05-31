@@ -9,7 +9,7 @@
 <body>
     <h1>Bat Ball Stump Game</h1>
     <div class="container">
-        <button class="cricket" onclick="
+        <button id="bat" class="cricket" onclick="
         const userMsg='You chose Bat';
         let rand=Math.round(Math.random()*3);
         let computer;
@@ -31,9 +31,9 @@
         alert(`You chose Bat. Computer has chosen ${computer}. ${result}`);
         "><img src="images/bat.png">Bat</button>
 
-        <button class="cricket" onclick="
+        <button id="ball" class="cricket" onclick="
         const userMsg='You chose Ball';
-        rand=Math.round(Math.random()*3);
+        let rand=Math.round(Math.random()*3);
         let computer;
         if (rand>=0 && rand<=1) {
             computer='Bat';
@@ -53,9 +53,9 @@
         alert(`You chose Ball. Computer has chosen ${computer}. ${result}`);
         "><img src="images/ball.png"> Ball</button>
 
-        <button class="cricket" onclick="
-        userMsg='You chose Stumps';
-        rand=Math.round(Math.random()*3);
+        <button id="stumps" class="cricket" onclick="
+        const userMsg='You chose Stumps';
+        let rand=Math.round(Math.random()*3);
         let computer;
         if (rand>=0 && rand<=1) {
             computer='Bat';
