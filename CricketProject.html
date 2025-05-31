@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket</title>
+    <link rel="stylesheet" href="styles/CricketProject.css">
+</head>
+<body>
+    <h1>Bat Ball Stump Game</h1>
+    <div class="container">
+        <button class="cricket" onclick="
+        const userMsg='You chose Bat';
+        let rand=Math.round(Math.random()*3);
+        let computer;
+        if (rand>=0 && rand<=1) {
+            computer='Bat';
+        } else if (rand>1 && rand<=2) {
+            computer='Ball';
+        } else {
+            computer='Stumps';
+        }
+        let result;
+        if (computer==='Bat') {
+            result=`It's a DRAW!!!`;
+        } else if (computer==='Ball') {
+            result='You have WON!!!';
+        } else if (computer==='Stumps') {
+            result='You have LOST!!!';
+        }
+        alert(`You chose Bat. Computer has chosen ${computer}. ${result}`);
+        "><img src="images/bat.png">Bat</button>
+
+        <button class="cricket" onclick="
+        const userMsg='You chose Ball';
+        rand=Math.round(Math.random()*3);
+        let computer;
+        if (rand>=0 && rand<=1) {
+            computer='Bat';
+        } else if (rand>1 && rand<=2) {
+            computer='Ball';
+        } else {
+            computer='Stumps';
+        }
+        let result;
+        if (computer==='Bat') {
+            result=`You have LOST!!!`;
+        } else if (computer==='Ball') {
+            result=`It's a DRAW!!!`;
+        } else if (computer==='Stumps') {
+            result='You have WON!!!';
+        }
+        alert(`You chose Ball. Computer has chosen ${computer}. ${result}`);
+        "><img src="images/ball.png"> Ball</button>
+
+        <button class="cricket" onclick="
+        userMsg='You chose Stumps';
+        rand=Math.round(Math.random()*3);
+        let computer;
+        if (rand>=0 && rand<=1) {
+            computer='Bat';
+        } else if (rand>1 && rand<=2) {
+            computer='Ball';
+        } else {
+            computer='Stumps';
+        }
+        let result;
+        if (computer==='Bat') {
+            result=`You have WON!!!`;
+        } else if (computer==='Ball') {
+            result='You have LOST!!!';
+        } else if (computer==='Stumps') {
+            result=`It's a DRAW!!!`;
+        }
+        alert(`You chose Stumps. Computer has chosen ${computer}. ${result}`);
+        "><img src="images/stumps.png">Stumps</button>
+    </div>
+</body>
+</html>
