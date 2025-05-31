@@ -1,0 +1,39 @@
+h1 {
+    padding-top: 20px;
+    text-align: center;
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+.container {
+    text-align: center;
+}
+.cricket {
+    height: 40px;
+    width: 120px;
+    padding: 5px;
+    font-size: 20px;
+    color: antiquewhite;
+    background-color: rgb(42, 42, 42);
+    border: 2px solid black;
+    border-radius: 8px;
+}
+#bat:hover,#ball:hover,#stumps:hover {
+    height: 46.8px;
+    width: 127px;
+    padding: 5px;
+    font-size: 22px;
+    transition: all 0.3s ease-in-out;
+}
+#bat:active,#ball:active,#stumps:active {
+    height: 46.8px;
+    width: 127px;
+    padding: 5px;
+    font-size: 22px;
+    transition: all 0.3s ease-in-out;
+    background-color: antiquewhite;
+    color: rgb(42, 42, 42);
+}
+img {
+    height: 20px;
+    width: 20px;
+}
