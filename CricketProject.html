@@ -10,70 +10,24 @@
     <h1>Bat Ball Stump Game</h1>
     <div class="container">
         <button id="bat" class="cricket" onclick="
-        const userMsg='You chose Bat';
-        let rand=Math.round(Math.random()*3);
-        let computer;
-        if (rand>=0 && rand<=1) {
-            computer='Bat';
-        } else if (rand>1 && rand<=2) {
-            computer='Ball';
-        } else {
-            computer='Stumps';
-        }
-        let result;
-        if (computer==='Bat') {
-            result=`It's a DRAW!!!`;
-        } else if (computer==='Ball') {
-            result='You have WON!!!';
-        } else if (computer==='Stumps') {
-            result='You have LOST!!!';
-        }
-        alert(`You chose Bat. Computer has chosen ${computer}. ${result}`);
+        let computer=generateComputerChoice();
+        let resultMsg=getResult('Bat',computer);
+        showResult('Bat',computer,resultMsg);
         "><img src="images/bat.png">Bat</button>
 
         <button id="ball" class="cricket" onclick="
-        const userMsg='You chose Ball';
-        let rand=Math.round(Math.random()*3);
-        let computer;
-        if (rand>=0 && rand<=1) {
-            computer='Bat';
-        } else if (rand>1 && rand<=2) {
-            computer='Ball';
-        } else {
-            computer='Stumps';
-        }
-        let result;
-        if (computer==='Bat') {
-            result=`You have LOST!!!`;
-        } else if (computer==='Ball') {
-            result=`It's a DRAW!!!`;
-        } else if (computer==='Stumps') {
-            result='You have WON!!!';
-        }
-        alert(`You chose Ball. Computer has chosen ${computer}. ${result}`);
+        computer=generateComputerChoice();
+        resultMsg=getResult('Ball',computer);
+        showResult('Ball',computer,resultMsg);       
         "><img src="images/ball.png"> Ball</button>
 
         <button id="stumps" class="cricket" onclick="
-        const userMsg='You chose Stumps';
-        let rand=Math.round(Math.random()*3);
-        let computer;
-        if (rand>=0 && rand<=1) {
-            computer='Bat';
-        } else if (rand>1 && rand<=2) {
-            computer='Ball';
-        } else {
-            computer='Stumps';
-        }
-        let result;
-        if (computer==='Bat') {
-            result=`You have WON!!!`;
-        } else if (computer==='Ball') {
-            result='You have LOST!!!';
-        } else if (computer==='Stumps') {
-            result=`It's a DRAW!!!`;
-        }
-        alert(`You chose Stumps. Computer has chosen ${computer}. ${result}`);
+        computer=generateComputerChoice();
+        resultMsg=getResult('Stumps',computer);
+        showResult('Stumps',computer,resultMsg);
         "><img src="images/stumps.png">Stumps</button>
+
+        <script src="scripts/CricketProject.js"></script>
     </div>
 </body>
 </html>
