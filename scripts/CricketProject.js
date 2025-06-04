@@ -1,3 +1,11 @@
+let score = {
+    win:0,
+    lost:0,
+    tie:0,
+    displayScore: function(){
+        return `Won: ${score.win}     Draw: ${score.tie}     Lost: ${score.lost}`
+    }
+};
 function generateComputerChoice() {
     let rand=Math.round(Math.random()*3);
     if (rand>=0 && rand<=1) {
@@ -11,30 +19,46 @@ function generateComputerChoice() {
 function getResult(user,comp) {
     if (user==='Bat') {
         if (comp==='Bat') {
-            return `It's a DRAW!!!`;
+            score.tie++;
+            return `IT'S A DRAW!!!`;
         } else if (comp==='Ball') {
-            return 'You have WON!!!';
+            score.win++;
+            return 'YOU HAVE WON!!!';
         } else if (comp==='Stumps') {
-            return `You have LOST!!!`;
+            score.lost++;
+            return `YOU HAVE LOST!!!`;
         }
     } else if (user==='Ball') {
         if (comp==='Bat') {
-            return `You have LOST!!!`;
+            score.lost++;
+            return `YOU HAVE LOST!!!`;
         } else if (comp==='Ball') {
-            return `It's a DRAW!!!`;
+            score.tie++;
+            return `IT'S A DRAW!!!`;
         } else if (comp==='Stumps') {
-            return 'You have WON!!!';
+            score.win++;
+            return 'YOU HAVE WON!!!';
         }
     } else {
         if (comp==='Bat') {
-            return `You have WON!!!`;
+            score.win++;
+            return `YOU HAVE WON!!!`;
         } else if (comp==='Ball') {
-            return 'You have LOST!!!';
+            score.lost++;
+            return 'YOU HAVE LOST!!!';
         } else if (comp==='Stumps') {
-            return `It's a DRAW!!!`;
+            score.tie++;
+            return `IT'S A DRAW!!!`;
         }
     }
 }
 function showResult(userMove,computerMove,result) {
-    alert(`You chose ${userMove}. Computer has chosen ${computerMove}. ${result}`);
+    console.log(score);
+    alert(
+`You chose ${userMove}
+Computer has chosen ${computerMove}
+
+${result}
+        
+${score.displayScore()}`);
 }
