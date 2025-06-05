@@ -26,8 +26,13 @@
         resultMsg=getResult('Stumps',computer);
         showResult('Stumps',computer,resultMsg);
         "><img src="images/stumps.png">Stumps</button>
-
-        <script src="scripts/CricketProject.js"></script>
     </div>
+    <button id="reset" onclick="
+    localStorage.clear();
+    resetScore();
+    localStorage.setItem('Score', JSON.stringify(score));
+">Reset</button>
+
+    <script src="scripts/CricketProject.js"></script>
 </body>
 </html>
