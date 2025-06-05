@@ -1,11 +1,16 @@
-let score = {
-    win:0,
-    lost:0,
-    tie:0,
-    displayScore: function(){
+function resetScore(){
+    let scoreStr=localStorage.getItem('Score'); 
+    score=scoreStr ? JSON.parse(scoreStr) : {
+        win:0,
+        lost:0,
+        tie:0,
+    };
+    score.displayScore= function(){
         return `Won: ${score.win}     Draw: ${score.tie}     Lost: ${score.lost}`
     }
-};
+}
+resetScore();
+
 function generateComputerChoice() {
     let rand=Math.round(Math.random()*3);
     if (rand>=0 && rand<=1) {
@@ -16,6 +21,7 @@ function generateComputerChoice() {
         return 'Stumps';
     }
 }
+
 function getResult(user,comp) {
     if (user==='Bat') {
         if (comp==='Bat') {
@@ -52,8 +58,9 @@ function getResult(user,comp) {
         }
     }
 }
+
 function showResult(userMove,computerMove,result) {
-    console.log(score);
+    localStorage.setItem('Score',JSON.stringify(score));
     alert(
 `You chose ${userMove}
 Computer has chosen ${computerMove}
