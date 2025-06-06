@@ -6,8 +6,9 @@ function resetScore(){
         tie:0,
     };
     score.displayScore= function(){
-        return `Won: ${score.win}     Draw: ${score.tie}     Lost: ${score.lost}`
-    }
+        return `Won-${score.win}, Draw-${score.tie}, Lost-${score.lost}`
+    };
+    showResult();
 }
 resetScore();
 
@@ -61,11 +62,8 @@ function getResult(user,comp) {
 
 function showResult(userMove,computerMove,result) {
     localStorage.setItem('Score',JSON.stringify(score));
-    alert(
-`You chose ${userMove}
-Computer has chosen ${computerMove}
-
-${result}
-        
-${score.displayScore()}`);
+    document.querySelector('#user_move').innerText = userMove ? `You have chosen ${userMove}.` : '';
+    document.querySelector('#computer_move').innerText = computerMove ? `Computer has chosen ${computerMove}.` : '';
+    document.querySelector('#result').innerText = result || '';
+    document.querySelector('#score').innerText = `Score: ${score.displayScore()}`;
 }
